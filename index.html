@@ -1,3 +1,12 @@
+Yes! My apologies—by switching to the custom static card, it stripped out the beautiful preview image that was attached to your actual LinkedIn post.
+
+If we go back to using your original `<iframe>` embed, it will keep your post's photo and likes intact. To fix the alignment so it sits perfectly on the left with the Twitter threads, we just need to change the `margin` from `0 auto` (which centers it) to `0 0 25px 0` (which left-aligns it).
+
+*(Note: If you still see the "LinkedIn refused to connect" error when viewing the file locally on your computer, don't worry! That is just a local security block in your browser. As soon as you upload the website to your actual web server, the post and photo will display perfectly.)*
+
+Here is the full, final HTML with the **original LinkedIn iframe (containing the photo)** perfectly **aligned on the left**:
+
+```html
 <!DOCTYPE HTML>
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -179,27 +188,9 @@
               <heading>Selected Threads</heading>
               <br><br>
 
-              <!-- Native Card for LinkedIn Post (left-aligned with Twitter embeds) -->
-              <div style="max-width: 504px; margin: 0 0 25px 0; padding: 18px 22px; border: 1px solid #e0e0e0; border-radius: 10px; background-color: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.06); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
-                  <div style="display: flex; align-items: center; gap: 10px;">
-                    <img src="images/PHOTO-2026-09-16-21-43-02.jpg" style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover;">
-                    <div>
-                      <div style="font-weight: 600; font-size: 14px; color: #191919;">Charlotte Caucheteux</div>
-                      <div style="font-size: 12px; color: #666666;">Senior Research Scientist at Google DeepMind</div>
-                    </div>
-                  </div>
-                  <a href="https://www.linkedin.com/feed/update/urn:li:share:7186777623081955328/" target="_blank" style="color: #0a66c2; text-decoration: none; font-weight: 600; font-size: 13px; display: flex; align-items: center; gap: 4px;">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#0a66c2" width="18" height="18"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2z"/></svg>
-                    Post
-                  </a>
-                </div>
-                <div style="font-size: 13.5px; line-height: 1.5; color: #222222; margin-bottom: 12px;">
-                  Excited to share <b>Llama 3</b>! Proud to have contributed to the memory effort focusing on long-context and retrieval capabilities, as well as zero-shot tool use.
-                </div>
-                <div style="border-top: 1px solid #f0f0f0; padding-top: 10px; font-size: 12.5px;">
-                  <a href="https://www.linkedin.com/feed/update/urn:li:share:7186777623081955328/" target="_blank" style="color: #0a66c2; text-decoration: none; font-weight: 500;">View full post on LinkedIn &rarr;</a>
-                </div>
+              <!-- Left-Aligned Native LinkedIn Iframe Embed -->
+              <div style="width:100%; max-width:504px; margin: 0 0 25px 0; display: block;">
+                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7186777623081955328?collapsed=1" height="670" width="504" frameborder="0" allowfullscreen="" title="Post int&eacute;gr&eacute;" style="border-radius: 8px; border: 1px solid #e0e0e0; box-shadow: 0 2px 8px rgba(0,0,0,0.08);"></iframe>
               </div>
 
               <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Our paper is out in Nature Human Behaviour🔥🔥<br><br>‘Evidence of a predictive coding hierarchy in the human brain listening to speech’<br><br>📄<a href="https://t.co/bkZ3AYMqDi">https://t.co/bkZ3AYMqDi</a><br>💡Unlike language models, our brain makes distant &amp; hierarchical predictions<br><br>with <a href="https://twitter.com/agramfort?ref_src=twsrc%5Etfw">@agramfort</a> and <a href="https://twitter.com/JeanRemiKing?ref_src=twsrc%5Etfw">@JeanRemiKing</a><br><br>Thread👇 <a href="https://t.co/Jbs68EOaur">pic.twitter.com/Jbs68EOaur</a></p>&mdash; Charlotte Caucheteux (@c_caucheteux) <a href="https://twitter.com/c_caucheteux/status/1632740588352151556?ref_src=twsrc%5Etfw">March 6, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -236,3 +227,5 @@
   </tbody></table>
 </body>
 </html>
+
+```
